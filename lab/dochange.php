@@ -16,7 +16,7 @@
  * Time: 下午3:34
  */
 
-$con = mysqli_connect("localhost","shawn","624453893521y","lab");
+$con = mysqli_connect("*******","shawn","*******","lab");
 if (!$con)
 {
     die('Could not connect: ' . mysqli_connect_error());
