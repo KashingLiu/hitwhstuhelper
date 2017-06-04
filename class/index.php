@@ -171,7 +171,7 @@
                             //开始会话
                             session_start();
                             //连接到lab库
-                            $con = mysqli_connect("120.24.240.44","shawn","624453893521y","lab");
+                            $con = mysqli_connect("*******","shawn","*******","lab");
                             if (!$con)
                             {
                                 die('Could not connect: ' . mysqli_connect_error());
