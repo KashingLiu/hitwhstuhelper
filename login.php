@@ -9,7 +9,9 @@
  */
 
 //connect database;
-$con = mysqli_connect("120.24.240.44", "shawn", "624453893521y","oneinstack");
+$con = mysqli_connect("***********", "shawn", "***********","oneinstack");  
+//first * means your service's ip address, second * means your password2your service
+//the last "oneinstack" is the name of your database
 if (!$con)
 {
     die('Could not connect: ' . mysqli_connect_error());
@@ -60,20 +62,6 @@ if( isset($_POST['id']) &&  isset($_POST['pwd']))  //isset是确认用户是否�
         <?php
     }
     ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <?php
