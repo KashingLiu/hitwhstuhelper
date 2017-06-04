@@ -163,7 +163,7 @@
                                 session_start();
                                 if( isset($_SESSION['id']) )
                                 {
-                                    $con = mysqli_connect("120.24.240.44", "shawn", "624453893521y", "oneinstack");
+                                    $con = mysqli_connect("*******", "shawn", "*******", "oneinstack");
                                     if (!$con) {
                                         die('Could not connect: ' . mysqli_connect_error());
                                     }
