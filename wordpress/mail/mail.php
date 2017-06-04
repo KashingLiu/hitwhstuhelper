@@ -1,0 +1,1 @@
+<?php require_once("functions.php");$flag = sendMail('624453893@qq.com','上课啦！','上课啦！！！'); ?>
