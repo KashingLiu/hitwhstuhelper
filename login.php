@@ -1,5 +1,6 @@
 <html>
 <meta charset="UTF-8">
+<body>
 <?php
 /**
  * Created by PhpStorm.
@@ -9,9 +10,7 @@
  */
 
 //connect database;
-$con = mysqli_connect("***********", "shawn", "***********","oneinstack");  
-//first * means your service's ip address, second * means your password2your service
-//the last "oneinstack" is the name of your database
+$con = mysqli_connect("120.24.240.44", "shawn", "624453893521y","oneinstack");
 if (!$con)
 {
     die('Could not connect: ' . mysqli_connect_error());
@@ -25,11 +24,10 @@ if( isset($_POST['id']) &&  isset($_POST['pwd']))  //isset是确认用户是否�
     $pwd = $_POST['pwd'];
 
     //执行sql查询
-    $sql ="Select id, name, userflag, email from users where id ='$id' and pwd='$pwd'";
-    $query = mysqli_query($con,$sql);
+    $sql = "Select id, name, userflag, email from users where id ='$id' and pwd='$pwd'";
+    $query = mysqli_query($con, $sql);
     $num = mysqli_num_rows($query);
-
-//    如果sql查询的数目大于0的话就算成功登录
+    //    如果sql查询的数目大于0的话就算成功登录
     if ( $num > 0 )
     {
 //        把得到的这一行变成数组
@@ -48,54 +46,20 @@ if( isset($_POST['id']) &&  isset($_POST['pwd']))  //isset是确认用户是否�
             echo '登录成功...正在跳转，请稍后...';
                 $url = "./usrmain.php";          //登录成功跳转到个人信息页面
                 echo "<meta http-equiv=\"refresh\" content=\"1; url=$url\">";   //用meta标签跳转，延迟1s跳转  用content来控制
-            }
         }
     }
     else
     {
-        echo '登录失败,用户名或密码不正确';
         ?>
         <script>
             alert("<?php echo "用户名或密码错误!"; ?>");         //alert在script中是弹出窗口
-            location.href="./login.html";     //登录不成功跳转到登录的login.html页面
+            location.href="./index.html";     //登录不成功跳转到登录的login.html页面
         </script>
         <?php
     }
+}
+mysqli_close($con);
     ?>
 
-
-<?php
-
-//    if( ( $_POST['id'] == "root" ) && $num > 0 )    //利用查询出的行数来确定用户名密码是否正确
-//    {
-//        echo '登录成功...正在跳转，请稍后...';
-//        $url = "./wordpress/root/";          //登录成功跳转到个人信息页面
-//        echo "<meta http-equiv=\"refresh\" content=\"1; url=$url\">";   //用meta标签跳转，延迟1s跳转  用content来控制
-//        ?>
-<!--        --><?php
-//    }
-//    elseif( ( $_POST['id'] != "root" ) && $num > 0)
-//    {
-//        echo '登录成功...正在跳转，请稍后...';
-//        $url = "./usrmain.html";
-//        echo "<meta http-equiv=\"refresh\" content=\"1; url=$url\">";   //用meta标签跳转，延迟1s跳转  用content来控制
-//        ?>
-<!--        --><?php
-//    }
-//    elseif( $num <= 0 )
-//    {
-//        echo '登录失败,用户名或密码不正确';
-//        ?>
-<!--        <script>-->
-<!--            alert("--><?php //echo "用户名或密码错误!"; ?><!--//");         //alert在script中是弹出窗口-->
-<!--            location.href="./login.html";     //登录不成功跳转到登录的login.html页面-->
-<!--//        </script>-->
-        <?php
-//    }
-//}
-
-
-
-
-?>
+</body>
 </html>
