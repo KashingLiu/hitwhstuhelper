@@ -1,3 +1,8 @@
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
 <?php
 //设定用户提醒功能  10：00场  记录在b.sh中  需要email的session
 session_start();
@@ -12,3 +17,5 @@ echo "已设定提醒，将在每天早上10：05发送到您的邮箱：".$_SES
 $url = "./index.php";
 echo "<meta http-equiv=\"refresh\" content=\"0.5; url=$url\">";
 ?>
+</body>
+</html>
