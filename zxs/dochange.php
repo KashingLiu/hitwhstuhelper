@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8">
 </head>
-
-
 <body>
-
-
 <?php
 /**
  * Created by PhpStorm.
@@ -16,7 +12,7 @@
  * Time: 下午3:34
  */
 
-$con = mysqli_connect("*******","shawn","*******","oneinstack");
+$con = mysqli_connect("localhost","shawn","624453893521y","oneinstack");
 if (!$con)
 {
     die('Could not connect: ' . mysqli_connect_error());
@@ -37,16 +33,9 @@ $res = mysqli_query($con,$a);
 if(!$res) {
     echo "error";
 }
-else {
-    echo "修改成功！";
-}
-
-
-
+echo "<meta http-equiv='refresh' content='0.1; url=./index.php'>";
 mysqli_close($con);
-
 ?>
-<a href="index.php">返回</a>
 
 </body>
 </html>

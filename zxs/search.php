@@ -2,35 +2,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN" class="no-js no-svg">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-
-    <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
     <title>哈工大（威海）校园学习助手</title>
-    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
-    <link rel='dns-prefetch' href='//s.w.org' />
-    <link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
-    <link rel="alternate" type="application/rss+xml" title="哈工大（威海）校园学习助手 &raquo; Feed" href="https://www.kashingliu.xyz/wordpress/?feed=rss2" />
-    <link rel="alternate" type="application/rss+xml" title="哈工大（威海）校园学习助手 &raquo; 评论Feed" href="https://www.kashingliu.xyz/wordpress/?feed=comments-rss2" />
-    <script type="text/javascript">
-        window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.kashingliu.xyz\/wordpress\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.4"}};
-        !function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
-    </script>
-    <style type="text/css">
-        img.wp-smiley,
-        img.emoji {
-            display: inline !important;
-            border: none !important;
-            box-shadow: none !important;
-            height: 1em !important;
-            width: 1em !important;
-            margin: 0 .07em !important;
-            vertical-align: -0.1em !important;
-            background: none !important;
-            padding: 0 !important;
-        }
-    </style>
+    <meta charset="utf-8">
     <link rel='stylesheet' id='twentyseventeen-fonts-css'  href='https://fonts.googleapis.com/css?family=Libre+Franklin%3A300%2C300i%2C400%2C400i%2C600%2C600i%2C800%2C800i&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
     <link rel='stylesheet' id='twentyseventeen-style-css'  href='https://www.kashingliu.xyz/wordpress/wp-content/themes/twentyseventeen/style.css?ver=4.7.4' type='text/css' media='all' />
     <!--[if lt IE 9]>
@@ -81,11 +54,13 @@
             <div class="wrap">
                 <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="顶部菜单">
                     <button class="menu-toggle" aria-controls="top-menu" aria-expanded="false"><svg class="icon icon-bars" aria-hidden="true" role="img"> <use href="#icon-bars" xlink:href="#icon-bars"></use> </svg><svg class="icon icon-close" aria-hidden="true" role="img"> <use href="#icon-close" xlink:href="#icon-close"></use> </svg>菜单</button>
-                    <div class="menu-%e9%a1%b6%e9%83%a8%e8%8f%9c%e5%8d%95-container"><ul id="top-menu" class="menu"><li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-20"><a href=".../usrmain.html">首页</a></li>
-                            <li id="menu-item-34" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34"><a href=".../score/index.html">成绩查询</a></li>
-                            <li id="menu-item-31" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31"><a href=".../class/index.html">课程查询</a></li>
-                            <li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-39 current_page_item menu-item-42"><a href=".../zxs/index.html">自习室查询</a></li>
-                            <li id="menu-item-36" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36"><a href=".../lab/index.html">实验室查询</a></li>
+                    <div class="menu-%e9%a1%b6%e9%83%a8%e8%8f%9c%e5%8d%95-container"><ul id="top-menu" class="menu"><li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-20"><a href=".././usrmain.php">首页</a></li>
+                            <li id="menu-item-34" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34"><a href=".././score/index.php">成绩查询</a></li>
+                            <li id="menu-item-31" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31"><a href=".././class/index.php">课程查询</a></li>
+                            <li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-39 current_page_item menu-item-42"><a href=".././zxs/index.php">自习室查询</a></li>
+                            <li id="menu-item-36" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36"><a href=".././lab/index.php">实验室查询</a></li>
+                            <li id="menu-item-61" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61"><a href=".././individual/index.php">个人设置</a></li>
+
                         </ul></div>
                 </nav><!-- #site-navigation -->
             </div><!-- .wrap -->
@@ -118,7 +93,7 @@
                                 <select name="s2">
                                     <option value="请选择楼层" selected>请选择楼层</option>
                                 </select>
-                                <input type="submit" value="Submit">
+                                <input type="submit" value="查询">
                                 <?php
                                 session_start();
                                 if( $_SESSION['userflag'] == 1 )
@@ -167,7 +142,7 @@
                             <br>
 
                             <?php
-                            $con = mysqli_connect("*******", "shawn", "*******","oneinstack");
+                            $con = mysqli_connect("120.24.240.44", "shawn", "624453893521y","oneinstack");
                             if (!$con)
                             {
                                 die('Could not connect: ' . mysqli_connect_error());

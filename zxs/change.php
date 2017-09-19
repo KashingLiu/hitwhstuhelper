@@ -80,11 +80,13 @@
             <div class="wrap">
                 <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="顶部菜单">
                     <button class="menu-toggle" aria-controls="top-menu" aria-expanded="false"><svg class="icon icon-bars" aria-hidden="true" role="img"> <use href="#icon-bars" xlink:href="#icon-bars"></use> </svg><svg class="icon icon-close" aria-hidden="true" role="img"> <use href="#icon-close" xlink:href="#icon-close"></use> </svg>菜单</button>
-                    <div class="menu-%e9%a1%b6%e9%83%a8%e8%8f%9c%e5%8d%95-container"><ul id="top-menu" class="menu"><li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-20"><a href=".../usrmain.html">首页</a></li>
-                            <li id="menu-item-34" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34"><a href=".../score/index.html">成绩查询</a></li>
-                            <li id="menu-item-31" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31"><a href=".../class/index.html">课程查询</a></li>
-                            <li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-39 current_page_item menu-item-42"><a href="../../lab/index.html">自习室查询</a></li>
-                            <li id="menu-item-36" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36"><a href=".../lab/index.html">实验室查询</a></li>
+                    <div class="menu-%e9%a1%b6%e9%83%a8%e8%8f%9c%e5%8d%95-container"><ul id="top-menu" class="menu"><li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-20"><a href=".././usrmain.php">首页</a></li>
+                            <li id="menu-item-34" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34"><a href=".././score/index.php">成绩查询</a></li>
+                            <li id="menu-item-31" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31"><a href=".././class/index.php">课程查询</a></li>
+                            <li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-39 current_page_item menu-item-42"><a href=".././lab/index.php">自习室查询</a></li>
+                            <li id="menu-item-36" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36"><a href=".././lab/index.php">实验室查询</a></li>
+                            <li id="menu-item-61" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61"><a href=".././individual/index.php">个人设置</a></li>
+
                         </ul></div>
                 </nav><!-- #site-navigation -->
             </div><!-- .wrap -->
@@ -108,15 +110,18 @@
                             <form action="./dochange.php" name="frm" method="post">
                                 <select name="s1" onChange="redirec(document.frm.s1.options.selectedIndex)">
                                     <option selected>请选择教学楼及楼层</option>
-                                    <option value="G1">G楼1楼</option>
-                                    <option value="G2">G楼2楼</option>
+                                    <option value="G1">G楼1层</option>
+                                    <option value="G2">G楼2层</option>
+                                    <option value="H3">H楼3层</option>
+                                    <option value="H4">H楼4层</option>
+                                    <option value="H5">H楼5层</option>
                                     <option value="M1">M楼1层</option>
                                     <option value="M2">M楼2层</option>
                                     <option value="M3">M楼3层</option>
-                                    <option value="N1">N1楼</option>
-                                    <option value="N2">N2楼</option>
-                                    <option value="N3">N3楼</option>
-                                    <option value="N4">N4楼</option>
+                                    <option value="N1">N楼1层</option>
+                                    <option value="N2">N楼2层</option>
+                                    <option value="N3">N楼3层</option>
+                                    <option value="N4">N楼4层</option>
                                 </select>
 
                                 <select name="s2">
@@ -164,7 +169,7 @@
                                 session_start();
                                 if( isset($_SESSION['id']) )
                                 {
-                                    $con = mysqli_connect("*******", "shawn", "*******", "oneinstack");
+                                    $con = mysqli_connect("120.24.240.44", "shawn", "624453893521y", "oneinstack");
                                     if (!$con) {
                                         die('Could not connect: ' . mysqli_connect_error());
                                     }
@@ -180,13 +185,15 @@
                                         $_SESSION['userflag'] = $row['userflag'];
                                     }
                                     if ($_SESSION['userflag'] == 1) {
-                                        echo "<input type=\"submit\" value=\"修改\">";
+                                        echo "<input type='submit' onclick=\"alert('修改成功！')\" value='修改'>";
                                     }
                                     else
                                     {
                                         echo "您没有权限进行此操作！";
                                     }
+                                    mysqli_close($con);
                                 }
+
                                 ?>
                             </form>
                             <script language="javascript">
@@ -206,80 +213,107 @@
                                 select2[2][0] = new Option("G201", "G201");
                                 select2[2][1] = new Option("G203", "G203");
 
-                                select2[3][0] = new Option("M102", "M102");
-                                select2[3][1] = new Option("M104", "M104");
-                                select2[3][2] = new Option("M105", "M105");
-                                select2[3][3] = new Option("M106", "M106");
-                                select2[3][4] = new Option("M108", "M108");
+                                select2[3][0] = new Option("H324", "H324");
+                                select2[3][1] = new Option("H326", "H326");
+                                select2[3][2] = new Option("H328", "H328");
+                                select2[3][3] = new Option("H330", "H330");
 
-                                select2[4][0] = new Option("M201", "M201");
-                                select2[4][1] = new Option("M203", "M203");
-                                select2[4][2] = new Option("M204", "M204");
-                                select2[4][3] = new Option("M205", "M205");
-                                select2[4][4] = new Option("M207", "M207");
+                                select2[4][0] = new Option("H425", "H425");
+                                select2[4][1] = new Option("H427", "H427");
+                                select2[4][2] = new Option("H429", "H429");
+                                select2[4][3] = new Option("H431", "H431");
+                                select2[4][4] = new Option("H434", "H434");
+                                select2[4][5] = new Option("H441", "H441");
+                                select2[4][6] = new Option("H447", "H447");
+                                select2[4][7] = new Option("H449", "H449");
+                                select2[4][8] = new Option("H451", "H451");
+                                select2[4][9] = new Option("H453", "H453");
+                                select2[4][10] = new Option("H456", "H456");
+                                select2[4][11] = new Option("H460", "H460");
+                                select2[4][12] = new Option("H463", "H463");
+                                select2[4][13] = new Option("H466", "H466");
 
-                                select2[5][0] = new Option("M301", "M301");
-                                select2[5][1] = new Option("M303", "M303");
-                                select2[5][2] = new Option("M304", "M304");
-                                select2[5][3] = new Option("M305", "M305");
-                                select2[5][4] = new Option("M307", "M307");
+                                select2[5][0] = new Option("H513", "H513");
+                                select2[5][1] = new Option("H520", "H520");
+                                select2[5][2] = new Option("H521", "H521");
+                                select2[5][3] = new Option("H522", "H522");
+                                select2[5][4] = new Option("H525", "H525");
+                                select2[5][5] = new Option("H529", "H529");
 
-                                select2[6][0] = new Option("N112", "N112");
-                                select2[6][1] = new Option("N114", "N114");
-                                select2[6][2] = new Option("N116", "N116");
-                                select2[6][3] = new Option("N118", "N118");
+                                select2[6][0] = new Option("M102", "M102");
+                                select2[6][1] = new Option("M104", "M104");
+                                select2[6][2] = new Option("M105", "M105");
+                                select2[6][3] = new Option("M106", "M106");
+                                select2[6][4] = new Option("M108", "M108");
 
-                                select2[7][0] = new Option("N206", "N206");
-                                select2[7][1] = new Option("N208", "N208");
-                                select2[7][2] = new Option("N218", "N218");
-                                select2[7][3] = new Option("N221", "N221");
-                                select2[7][4] = new Option("N223", "N223");
-                                select2[7][5] = new Option("N225", "N225");
-                                select2[7][6] = new Option("N227", "N227");
-                                select2[7][7] = new Option("N240", "N240");
-                                select2[7][8] = new Option("N249", "N249");
-                                select2[7][9] = new Option("N251", "N251");
-                                select2[7][10] = new Option("N253", "N253");
-                                select2[7][11] = new Option("N255", "N255");
-                                select2[7][12] = new Option("N257", "N257");
+                                select2[7][0] = new Option("M201", "M201");
+                                select2[7][1] = new Option("M203", "M203");
+                                select2[7][2] = new Option("M204", "M204");
+                                select2[7][3] = new Option("M205", "M205");
+                                select2[7][4] = new Option("M207", "M207");
 
-                                select2[8][0] = new Option("N301", "N301");
-                                select2[8][1] = new Option("N304", "N304");
-                                select2[8][2] = new Option("N308", "N308");
-                                select2[8][3] = new Option("N310", "N310");
-                                select2[8][4] = new Option("N313", "N313");
-                                select2[8][5] = new Option("N315", "N315");
-                                select2[8][6] = new Option("N325", "N325");
-                                select2[8][7] = new Option("N327", "N327");
-                                select2[8][8] = new Option("N329", "N329");
-                                select2[8][9] = new Option("N331", "N331");
-                                select2[8][10] = new Option("N333", "N333");
-                                select2[8][11] = new Option("N335", "N335");
-                                select2[8][12] = new Option("N337", "N337");
-                                select2[8][13] = new Option("N343", "N343");
-                                select2[8][14] = new Option("N353", "N353");
-                                select2[8][15] = new Option("N355", "N355");
-                                select2[8][16] = new Option("N357", "N357");
-                                select2[8][17] = new Option("N359", "N359");
-                                select2[8][18] = new Option("N361", "N361");
-                                select2[8][19] = new Option("N363", "N363");
+                                select2[8][0] = new Option("M301", "M301");
+                                select2[8][1] = new Option("M303", "M303");
+                                select2[8][2] = new Option("M304", "M304");
+                                select2[8][3] = new Option("M305", "M305");
+                                select2[8][4] = new Option("M307", "M307");
 
-                                select2[9][0]  = new Option("N401","N401");
-                                select2[9][1]  = new Option("N403","N403");
-                                select2[9][2]  = new Option("N411","N411");
-                                select2[9][3]  = new Option("N413","N413");
-                                select2[9][4]  = new Option("N415","N415");
-                                select2[9][5]  = new Option("N425","N425");
-                                select2[9][6]  = new Option("N427","N427");
-                                select2[9][7]  = new Option("N432","N432");
-                                select2[9][8]  = new Option("N433","N433");
-                                select2[9][9]  = new Option("N435","N435");
-                                select2[9][10] = new Option("N442","N442");
-                                select2[9][11] = new Option("N444","N444");
-                                select2[9][12] = new Option("N447","N447");
-                                select2[9][13] = new Option("N448","N448");
-                                select2[9][14] = new Option("N450","N450");
-                                select2[9][15] = new Option("N452","N452");
+                                select2[9][0] = new Option("N112", "N112");
+                                select2[9][1] = new Option("N114", "N114");
+                                select2[9][2] = new Option("N116", "N116");
+                                select2[9][3] = new Option("N118", "N118");
+
+                                select2[10][0] = new Option("N206", "N206");
+                                select2[10][1] = new Option("N208", "N208");
+                                select2[10][2] = new Option("N218", "N218");
+                                select2[10][3] = new Option("N221", "N221");
+                                select2[10][4] = new Option("N223", "N223");
+                                select2[10][5] = new Option("N225", "N225");
+                                select2[10][6] = new Option("N227", "N227");
+                                select2[10][7] = new Option("N240", "N240");
+                                select2[10][8] = new Option("N249", "N249");
+                                select2[10][9] = new Option("N251", "N251");
+                                select2[10][10] = new Option("N253", "N253");
+                                select2[10][11] = new Option("N255", "N255");
+                                select2[10][12] = new Option("N257", "N257");
+
+                                select2[11][0] = new Option("N301", "N301");
+                                select2[11][1] = new Option("N304", "N304");
+                                select2[11][2] = new Option("N308", "N308");
+                                select2[11][3] = new Option("N310", "N310");
+                                select2[11][4] = new Option("N313", "N313");
+                                select2[11][5] = new Option("N315", "N315");
+                                select2[11][6] = new Option("N325", "N325");
+                                select2[11][7] = new Option("N327", "N327");
+                                select2[11][8] = new Option("N329", "N329");
+                                select2[11][9] = new Option("N331", "N331");
+                                select2[11][10] = new Option("N333", "N333");
+                                select2[11][11] = new Option("N335", "N335");
+                                select2[11][12] = new Option("N337", "N337");
+                                select2[11][13] = new Option("N343", "N343");
+                                select2[11][14] = new Option("N353", "N353");
+                                select2[11][15] = new Option("N355", "N355");
+                                select2[11][16] = new Option("N357", "N357");
+                                select2[11][17] = new Option("N359", "N359");
+                                select2[11][18] = new Option("N361", "N361");
+                                select2[11][19] = new Option("N363", "N363");
+
+                                select2[12][0]  = new Option("N401","N401");
+                                select2[12][1]  = new Option("N403","N403");
+                                select2[12][2]  = new Option("N411","N411");
+                                select2[12][3]  = new Option("N413","N413");
+                                select2[12][4]  = new Option("N415","N415");
+                                select2[12][5]  = new Option("N425","N425");
+                                select2[12][6]  = new Option("N427","N427");
+                                select2[12][7]  = new Option("N432","N432");
+                                select2[12][8]  = new Option("N433","N433");
+                                select2[12][9]  = new Option("N435","N435");
+                                select2[12][10] = new Option("N442","N442");
+                                select2[12][11] = new Option("N444","N444");
+                                select2[12][12] = new Option("N447","N447");
+                                select2[12][13] = new Option("N448","N448");
+                                select2[12][14] = new Option("N450","N450");
+                                select2[12][15] = new Option("N452","N452");
                                 //联动函数
                                 function redirec(x)
                                 {

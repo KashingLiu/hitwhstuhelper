@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>哈工大（威海）校园学习助手</title>
-    <style type="text/css">
 
+    <style type="text/css">
+        .myown {
+            background-color: lightgray !important;   /*按钮颜色*/
+            border: none !important;          /*有无边框*/
+            color: rgb(255,255,255) !important;                /*字体颜色*/
+            border-radius: 4px !important;
+            font-size: 16px !important;
+            line-height: 1px !important;
+        }
     </style>
     <link rel='stylesheet' id='twentyseventeen-fonts-css'  href='https://fonts.googleapis.com/css?family=Libre+Franklin%3A300%2C300i%2C400%2C400i%2C600%2C600i%2C800%2C800i&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
     <link rel='stylesheet' id='twentyseventeen-style-css'  href='https://www.kashingliu.xyz/wordpress/wp-content/themes/twentyseventeen/style.css?ver=4.7.4' type='text/css' media='all' />
@@ -14,7 +22,7 @@
     <!--[if lt IE 9]>
     <script type='text/javascript' src='https://www.kashingliu.xyz/wordpress/wp-content/themes/twentyseventeen/assets/js/html5.js?ver=3.7.3'></script>
     <![endif]-->
-</head>
+    </head>
 
 <body class="home page-template-default page page-id-7 twentyseventeen-front-page has-header-image page-two-column colors-light">
 <div id="page" class="site">
@@ -47,10 +55,10 @@
                 <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="顶部菜单">
                     <button class="menu-toggle" aria-controls="top-menu" aria-expanded="false"><svg class="icon icon-bars" aria-hidden="true" role="img"> <use href="#icon-bars" xlink:href="#icon-bars"></use> </svg><svg class="icon icon-close" aria-hidden="true" role="img"> <use href="#icon-close" xlink:href="#icon-close"></use> </svg>菜单</button>
                     <div class="menu-%e9%a1%b6%e9%83%a8%e8%8f%9c%e5%8d%95-container"><ul id="top-menu" class="menu"><li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-20"><a href=".././usrmain.php">首页</a></li>
-                            <li id="menu-item-34" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34"><a href=".././score/index.php">成绩查询</a></li>
+                            <li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-39 current_page_item menu-item-42"><a href=".././score/index.php">成绩查询</a></li>
                             <li id="menu-item-31" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31"><a href=".././class/index.php">课程查询</a></li>
-                            <li id="menu-item-42" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42"><a href=".././zxs/index.php">自习室查询</a></li>
-                            <li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-39 current_page_item menu-item-36"><a href=".././lab/index.php">实验室查询</a></li>
+                            <li id="menu-item-34" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34"><a href=".././zxs/index.php">自习室查询</a></li>
+                            <li id="menu-item-36" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36"><a href=".././lab/index.php">实验室查询</a></li>
                             <li id="menu-item-61" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61"><a href=".././individual/index.php">个人设置</a></li>
 
                         </ul></div>
@@ -72,60 +80,58 @@
 
 
                         <div style="text-align: center; margin: 100px">
-                            <br />
-                            <form action="./search.php" name="frm" method="post">
-                                <select name="s1" onChange="redirec(document.frm.s1.options.selectedIndex)">
-                                    <option selected>请选择教学楼</option>
-                                    <option value="G">G楼</option>
-                                    <option value="H">H楼</option>
-                                    <option value="Y">Y楼</option>
-                                </select>
 
-                                <select name="s2">
-                                    <option value="请选择楼层" selected>请选择楼层</option>
-                                </select>
-                                <input type="submit" value="查询">
-                                <?php
-                                session_start();
-                                if( $_SESSION['userflag'] == 1 )
-                                {
-                                    echo "<a href=\"./change.php\"><input type=\"button\" value=\"修改\"></a>";
-                                }
-
-                                ?>
-                            </form>
-                            <script language="javascript">
-                                //获取一级菜单长度
-                                var select1_len = document.frm.s1.options.length;
-                                var select2 = new Array(select1_len);
-                                //把一级菜单都设为数组
-                                for (i=0; i<select1_len; i++)
-                                { select2[i] = new Array();}
-                                //定义基本选项
-                                select2[0][0] = new Option("请选择", " ");
-
-                                select2[1][0] = new Option("1层", "1");
-
-                                select2[2][0] = new Option("2层", "2");
-                                select2[2][1] = new Option("3层", "3");
-
-                                select2[3][0] = new Option("1层", "1");
-                                select2[3][1] = new Option("2层", "2");
-                                select2[3][2] = new Option("3层", "3");
-                                select2[3][3] = new Option("4层", "4");
-                                select2[3][4] = new Option("5层", "5");
-
-
-
-                                //联动函数
-                                function redirec(x)
-                                {
-                                    var temp = document.frm.s2;
-                                    for (i=0;i<select2[x].length;i++)
-                                    { temp.options[i]=new Option(select2[x][i].text,select2[x][i].value);}
-                                    temp.options[0].selected=true;
+                            <script>
+                                function myfunc(){
+                                    alert("成绩已修改!");
+                                    var a;
+                                    a = document.getElementById('sub');
+                                    a.submit("change1.php");
+                                    location.href = "change.php";
                                 }
                             </script>
+
+                            <?php
+
+                            session_start();
+                            $_SESSION['class_number']=$_POST['class'];
+                            echo "<table><tr><td>系别</td><td>班级</td><td style='text-align: left'>学号</td><td style='text-align: left'>分数</td><td> </td></tr>".
+                                "<tr> ".
+                                "<td>".$_SESSION['teacher']."</td>".
+                                "<td><form action='change1.php' method='post'><select name='banji_number' style='font-size: 11px'>".
+                                "<option value='01'>1班</option>".
+                                "<option value='02'>2班</option>".
+                                "<option value='03'>3班</option>".
+                                "<option value='04'>4班</option>".
+                                "<option value='05'>5班</option>".
+                                "<option value='06'>6班</option>".
+                                "</select></td>".
+                                "<td><input type='text' style='width:150px;height:29px;padding:6px;font-size:14px;' name='student_number'></td>".
+                                "<td><input type='text' style='width:150px;height:29px;padding:6px;font-size:14px;' name='score'></td>".
+                                "<td><button type='submit' class='myown' id='sub' onclick='return myfunc()'>提交</button></td>".
+                            "</tr></table></form>";
+                            ?>
+                            <script>
+                                function myfunc(){
+                                    alert("成绩已修改!");
+                                    var a;
+                                    a = document.getElementById('sub');
+                                    a.submit();
+                                }
+                            </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                         </div>
                     </article>

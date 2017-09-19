@@ -16,7 +16,7 @@
  * Time: 下午3:34
  */
 
-$con = mysqli_connect("*******","shawn","*******","lab");
+$con = mysqli_connect("localhost","shawn","624453893521y","lab");
 if (!$con)
 {
     die('Could not connect: ' . mysqli_connect_error());
@@ -37,16 +37,12 @@ $res = mysqli_query($con,$a);
 if(!$res) {
     echo "error";
 }
-else {
-    echo "修改成功！";
-}
-
+echo "<meta http-equiv='refresh' content='0.1; url=./index.php'>";
 
 
 mysqli_close($con);
 
 ?>
-<a href="index.php">返回</a>
 
 </body>
 </html>
